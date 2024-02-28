@@ -1,0 +1,229 @@
+
+public Dictionary<string, object> Generate(AirlineTemplateBase vm)
+{
+	Dictionary<string, object> d = new Dictionary<string, object>();
+	d["Remark"] = vm.Remark ;
+	d["CreateBy"] = vm.CreateBy ;
+	d["Airline"] = vm.Airline ;
+	d["SupplierCode"] = vm.SupplierCode ;
+	d["SupplierID"] = vm.SupplierID ;
+	d["SupplierName"] = vm.SupplierName ;
+	d["SupplierOrderContactEmails"] = vm.SupplierOrderContactEmails ;
+	List<Dictionary<string, object>> DepartureGroup=new List<Dictionary<string, object>>();
+	foreach(var i in vm.DepartureGroup)
+	{
+		var j=new Dictionary<string, object>();
+		j["Item1"] = i.Item1 ;
+		j["Item2"] = i.Item2 ;
+		DepartureGroup.Add(j);
+	}
+	d["DepartureGroup"] = DepartureGroup ;
+	List<Dictionary<string, object>> NameList=new List<Dictionary<string, object>>();
+	foreach(var i in vm.NameList)
+	{
+		var j=new Dictionary<string, object>();
+		j["NameListID"] = i.NameListID ;
+		j["DepartureGroupID"] = i.DepartureGroupID ;
+		j["PassengerID"] = i.PassengerID ;
+		j["OrderID"] = i.OrderID ;
+		j["OrderNo"] = i.OrderNo ;
+		j["SureName"] = i.SureName ;
+		j["GivenName"] = i.GivenName ;
+		j["IsFake"] = i.IsFake ;
+		j["GenderName"] = i.GenderName ;
+		j["EmployeeID"] = i.EmployeeID ;
+		j["PassengerRemark"] = i.PassengerRemark ;
+		j["TripRemark"] = i.TripRemark ;
+		j["GroupCode"] = i.GroupCode ;
+		j["AreaType"] = i.AreaType ;
+		j["BackDate"] = i.BackDate ;
+		j["DepartureDate"] = i.DepartureDate ;
+		NameList.Add(j);
+	}
+	d["NameList"] = NameList ;
+	List<Dictionary<string, object>> Passenger=new List<Dictionary<string, object>>();
+	foreach(var i in vm.Passenger)
+	{
+		var j=new Dictionary<string, object>();
+		j["PassengerID"] = i.PassengerID ;
+		j["OrderID"] = i.OrderID ;
+		j["PassengerNo"] = i.PassengerNo ;
+		j["Xing"] = i.Xing ;
+		j["Ming"] = i.Ming ;
+		j["SureName"] = i.SureName ;
+		j["GivenName"] = i.GivenName ;
+		j["GenderName"] = i.GenderName ;
+		j["Gender"] = i.Gender ;
+		j["BedType"] = i.BedType ;
+		j["TelArea"] = i.TelArea ;
+		j["Tel"] = i.Tel ;
+		j["Email"] = i.Email ;
+		j["MemberCard"] = i.MemberCard ;
+		j["MemberLoginName"] = i.MemberLoginName ;
+		j["MemberID"] = i.MemberID ;
+		j["RoomOccupationType"] = i.RoomOccupationType ;
+		j["PassengerType"] = i.PassengerType ;
+		j["Birthday"] = i.Birthday ;
+		j["IDCard"] = i.IDCard ;
+		j["TravelDocType"] = i.TravelDocType ;
+		j["OtherTravelDocType"] = i.OtherTravelDocType ;
+		j["TravelDocExpireDate"] = i.TravelDocExpireDate ;
+		j["TravelDocNation"] = i.TravelDocNation ;
+		j["TravelDocNo"] = i.TravelDocNo ;
+		j["Nation"] = i.Nation ;
+		j["AsignType"] = i.AsignType ;
+		j["AsignOrderRemark"] = i.AsignOrderRemark ;
+		j["AsignDocCollectType"] = i.AsignDocCollectType ;
+		j["IsEarlyDeparture"] = i.IsEarlyDeparture ;
+		j["EarlyDepartureDate"] = i.EarlyDepartureDate ;
+		j["IsStayBehind"] = i.IsStayBehind ;
+		j["StayBehindDate"] = i.StayBehindDate ;
+		j["FlightCarbinType"] = i.FlightCarbinType ;
+		j["FlightFoodCode"] = i.FlightFoodCode ;
+		j["FlightFoodName"] = i.FlightFoodName ;
+		j["RoomNo"] = i.RoomNo ;
+		j["Remark"] = i.Remark ;
+		j["InsuranceType"] = i.InsuranceType ;
+		j["InsuranceCompanyName"] = i.InsuranceCompanyName ;
+		j["InsuranceNo"] = i.InsuranceNo ;
+		j["UrgentTelArea"] = i.UrgentTelArea ;
+		j["UrgentTel"] = i.UrgentTel ;
+		j["UrgentSureName"] = i.UrgentSureName ;
+		j["UrgentGivenName"] = i.UrgentGivenName ;
+		j["EarlyDepartureDesc"] = i.EarlyDepartureDesc ;
+		j["StayBehindDesc"] = i.StayBehindDesc ;
+                j["TravelDocIssueDate"] = i.TravelDocIssueDate;
+		Passenger.Add(j);
+	}
+	d["Passenger"] = Passenger ;
+	List<Dictionary<string, object>> Employee=new List<Dictionary<string, object>>();
+	foreach(var i in vm.Employee)
+	{
+		var j=new Dictionary<string, object>();
+		j["EmployeeID"] = i.EmployeeID ;
+		j["Title"] = i.Title ;
+		j["Gender"] = i.Gender ;
+		j["SurnNameEN"] = i.SurnNameEN ;
+		j["FirstName"] = i.FirstName ;
+		j["Alias"] = i.Alias ;
+		j["FullNamePP"] = i.FullNamePP ;
+		j["FullNameCN"] = i.FullNameCN ;
+		j["HKIDNO"] = i.HKIDNO ;
+		j["Company"] = i.Company ;
+		j["DateofBirth"] = i.DateofBirth ;
+		j["Nationality"] = i.Nationality ;
+		j["PriPassportNO"] = i.PriPassportNO ;
+		j["PriPassportExpiryDate"] = i.PriPassportExpiryDate ;
+		j["PriIssuedPlace"] = i.PriIssuedPlace ;
+		j["SecPassportNO"] = i.SecPassportNO ;
+		j["SecPassportExpiryDate"] = i.SecPassportExpiryDate ;
+		j["SecIssuedPlace"] = i.SecIssuedPlace ;
+		j["CepNO"] = i.CepNO ;
+		j["CepExpiryDate"] = i.CepExpiryDate ;
+		j["OutPermitNO"] = i.OutPermitNO ;
+		j["OutPermitExpiryDate"] = i.OutPermitExpiryDate ;
+		j["InPermitNO"] = i.InPermitNO ;
+		j["InPermitExpiryDate"] = i.InPermitExpiryDate ;
+		j["IARegNO"] = i.IARegNO ;
+		j["IARegExpiryDate"] = i.IARegExpiryDate ;
+		j["ADDRESS"] = i.ADDRESS ;
+		j["District"] = i.District ;
+		j["Mobile1"] = i.Mobile1 ;
+		j["Mobile2"] = i.Mobile2 ;
+		j["HomeTel"] = i.HomeTel ;
+		j["EmergencyContact"] = i.EmergencyContact ;
+		j["ContactNO"] = i.ContactNO ;
+		j["EmailAddress"] = i.EmailAddress ;
+		Employee.Add(j);
+	}
+	d["Employee"] = Employee ;
+	List<Dictionary<string, object>> Rloc=new List<Dictionary<string, object>>();
+	foreach(var i in vm.Rloc)
+	{
+		var j=new Dictionary<string, object>();
+		j["PRID"] = i.PRID ;
+		j["NameListID"] = i.NameListID ;
+		j["PassengerID"] = i.PassengerID ;
+		j["RLOCType"] = i.RLOCType ;
+		j["RLOC"] = i.RLOC ;
+		Rloc.Add(j);
+	}
+	d["Rloc"] = Rloc ;
+	List<Dictionary<string, object>> Routing=new List<Dictionary<string, object>>();
+	foreach(var i in vm.Routing)
+	{
+		var j=new Dictionary<string, object>();
+		j["AirlineCode"] = i.AirlineCode ;
+		j["AirlineName"] = i.AirlineName ;
+		j["ArrivalDate"] = i.ArrivalDate ;
+		j["DepartureDate"] = i.DepartureDate ;
+		j["DepartureGroupID"] = i.DepartureGroupID ;
+		j["Duration"] = i.Duration ;
+		j["FlightNumber"] = i.FlightNumber ;
+		j["FlightRouteID"] = i.FlightRouteID ;
+		j["FromAirportCode"] = i.FromAirportCode ;
+		j["FromAirportName"] = i.FromAirportName ;
+		j["PDGRSID"] = i.PDGRSID ;
+		j["ToAirportCode"] = i.ToAirportCode ;
+		j["ToAirportName"] = i.ToAirportName ;
+		Routing.Add(j);
+	}
+	d["Routing"] = Routing ; 
+    
+ // Excel模板字段 
+List<Dictionary<string, object>> LHPassenger = new List<Dictionary<string, object>>();
+List<Dictionary<string, object>> Leader = new List<Dictionary<string, object>>();
+
+// 遍歷 vm.NameList 列表中的每個項目
+foreach (var item in vm.NameList)
+{
+    // 根據 item.PassengerID 在 vm.Passenger 列表中查找相應的乘客資料
+    var passenger = vm.Passenger.FirstOrDefault(p => p.PassengerID == item.PassengerID);
+    // 根據 item.EmployeeID 在 vm.Employee 列表中查找相應的員工資料
+    var employee = vm.Employee.FirstOrDefault(e => e.EmployeeID == item.EmployeeID);
+    
+    var j = new Dictionary<string, object>();
+
+    if (passenger != null)
+    {
+        // 如果找到了相應的乘客資料，則將乘客的相關資訊添加到 j 中
+        j["PassengerType"] = passenger.PassengerType == 0 ? "Adult(s)" : "Child(ren)";
+        j["Title"] = item.GenderName;
+        j["FirstName"] = item.GivenName;
+        j["LastName"] = item.SureName;
+        j["Nationality"] = passenger.Nation;
+        j["Birthday"] = $"{passenger.Birthday:dd/MM/yyyy}";
+        j["TravelDocType"] = "Passport";
+        j["TravelDocNo"] = passenger.TravelDocNo;
+        j["TravelDocIssueDate"] = $"{passenger.TravelDocIssueDate:dd/MM/yyyy}";
+        j["PriPassportExpiryDate"] = $"{passenger.TravelDocExpireDate:dd/MM/yyyy}";  
+        LHPassenger.Add(j);
+    } 
+    else if (employee != null)
+    {
+        // 如果找到了相應的員工資料，則將領隊的相關資訊添加到 j 中
+        j["PassengerType"] = "Leader";
+        j["Title"] = item.GenderName;
+        j["FirstName"] = item.GivenName;
+        j["LastName"] = item.SureName;
+        j["Nationality"] = employee.Nationality;
+        j["Birthday"] = $"{employee.DateofBirth:dd/MM/yyyy}";
+        j["TravelDocType"] = "Passport";
+        j["TravelDocNo"] = (item.AreaType.Equals("中國長線") || item.AreaType.Equals("廣東省")) ? employee.CepNO: employee.PriPassportNO;
+        j["TravelDocIssueDate"] = ""; 
+        j["PriPassportExpiryDate"] = (item.AreaType.Equals("中國長線") || item.AreaType.Equals("廣東省")) ? $"{employee.CepExpiryDate:dd/MM/yyyy}" : $"{employee.PriPassportExpiryDate:dd/MM/yyyy}";
+        Leader.Add(j);
+    }
+}
+
+// 將 LHPassenger 列表反轉
+LHPassenger.Reverse(); 
+
+// 創建字典 d 並將 LHPassenger 和 Leader 添加到其中
+d["LHPassenger"] = LHPassenger;
+d["Leader"] = Leader;
+
+// 返回字典 d
+return d;
+
+}
